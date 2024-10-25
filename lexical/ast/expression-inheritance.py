@@ -3,7 +3,9 @@ from abc import ABC, abstractmethod
 from functools import reduce
 
 # This is the base class of all kinds of expressions. It is abstract since we don't know
-# how the compute its value
+# how the compute its value. In this version, an abstract method (method eval) has to be redefined
+# in each subclass in order to compute the value of the expression. This is a good solution, but still has
+# some flaws, since it will be necessary as many methods as we wish to introduce new functionalities on the AST.
 class Expression(ABC):
     @abstractmethod
     def eval(self) -> int:
